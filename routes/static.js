@@ -1,11 +1,7 @@
-const express = require('express');
+ const express = require('express');
 const router = express.Router();
 
 // Static Routes
-// index Route
-app.get("/", function(req, res) {
-    res.render("index" , {"title": "Home Page"});
-});
 // Set up "public" folder / subfolders for static files
 router.use(express.static("public"));
 router.use("/css", express.static(__dirname + "public/css"));
