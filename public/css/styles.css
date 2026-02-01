@@ -284,3 +284,41 @@ footer {
     grid-row: 1/2;
   }
 }
+
+/* Base message styling */
+.message {
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  border-left: 6px solid;
+}
+
+/* Informational notice */
+.notice {
+  background-color: #e8f2ff;
+  color: #084298;
+  border-color: #0d6efd;
+}
+
+/* Success message */
+.success {
+  background-color: #e9f7ef;
+  color: #0f5132;
+  border-color: #198754;
+}
+
+/* Warning message */
+.warning {
+  background-color: #fff4e5;
+  color: #664d03;
+  border-color: #ffc107;
+}
+
+/* Error message */
+.error {
+  background-color: #fdecea;
+  color: #842029;
+  border-color: #dc3545;
+}
