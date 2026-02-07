@@ -1,0 +1,60 @@
+<% if (errors) { %>
+<ul class="notice">
+    <% errors.array().forEach(error => { %>
+    <li><%= error.msg %></li>
+    <% }) %>
+</ul>
+<% } %>
+
+
+<div class="inventory-container">
+
+    <h1>Edit Inventory</h1>
+    <div class="notice">
+        <%- messages() %>
+    </div>
+
+    <form action="/inv/update" method="post" id="updateForm">
+        <input type="hidden" name="inv_id" <% if(locals.inv_id) { %> value="<%= locals.inv_id %>" <% } %>>
+
+        <label for="inv_make">Inventory Make</label>
+        <input type="text" id="inv_make" name="inv_make" required pattern="^[A-Za-z0-9]+$"
+            title="No spaces or special characters" value="<%= locals.inv_make %>">
+
+        <label for="inv_model">Inventory Model</label>
+        <input type="text" id="inv_model" name="inv_model" required pattern="^[A-Za-z0-9]+$"
+            title="No spaces or special characters" value="<%= locals.inv_model %>">
+
+        <label for="inv_year">Inventory Year</label>
+        <input type="number" id="inv_year" name="inv_year" required min="1800" max="2100"
+            value="<%= locals.inv_year %>">
+
+        <label for="inv_price">Inventory Price</label>
+        <input type="number" id="inv_price" name="inv_price" required value="<%= locals.inv_price %>">
+
+        <label for="inv_miles">Inventory Miles</label>
+        <input type="number" id="inv_miles" name="inv_miles" required value="<%= locals.inv_miles %>">
+
+        <label for="inv_color">Inventory Color</label>
+        <input type="text" id="inv_color" name="inv_color" required value="<%= locals.inv_color %>">
+
+        <label for="inv_description">Inventory Description</label>
+        <textarea id="inv_description" name="inv_description" required rows="4" pattern="^[A-Za-z0-9\s,.'-]+$"
+            title="No special characters except , . ' -"><%= locals.inv_description %></textarea>
+
+        <label for="inv_image">Inventory Image Path</label>
+        <input type="text" id="inv_image" name="inv_image" required pattern="^[A-Za-z0-9/._-]+$"
+            title="No spaces or special characters except / . _ -" value="<%= locals.inv_image %>">
+
+        <label for="inv_thumbnail">Inventory Image Thumbnail</label>
+        <input type="text" id="inv_thumbnail" name="inv_thumbnail" required pattern="^[A-Za-z0-9/._-]+$"
+            title="No spaces or special characters except / . _ -" value="<%= locals.inv_thumbnail %>">
+
+        <label for="classification_id">Classification</label>
+        <%- classificationOptions %>
+
+        <button type="submit" disabled>Update Vehicle</button>
+    </form>
+</div>
+
+<script src="/js/inv-update.js"></script>

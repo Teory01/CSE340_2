@@ -1,0 +1,31 @@
+
+<main class="management-container">
+  <h1>Inventory Management</h1>
+
+<div class="flash-message"><%- messages() %></div>
+
+  <section class="management-actions">
+    <p>Use the buttons above to manage inventory classifications and items.</p>
+    <div>
+      <a href="/inv/add-classification" class="btn">Add Classification</a>
+      <a href="/inv/add-inventory" class="btn">Add Inventory</a>
+    </div>
+  </section>
+
+  <section class="manage-inventory">
+    <h2>Manage Inventory</h2>
+    <p>Select a classification from the list to see the items belonging to that classification.</p>
+    <%- classificationOptions %>
+
+    <table id="inventoryDisplay"></table>
+
+    <noscript>JavaScript must be enabled to use this page.</noscript>
+
+  </section>
+
+  <section>
+  </section>
+</main>
+
+
+<script src="/js/inventory.js"></script>

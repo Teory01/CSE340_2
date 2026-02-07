@@ -1,0 +1,60 @@
+<%# Project 4, deliver Register activity %>
+
+  <% if (errors) { %>
+    <div id="messages">
+      <ul class="error">
+        <% errors.array().forEach(error => { %>
+        <li><%= error.msg %></li>
+        <% }) %>
+      </ul>
+    </div>
+  <% } %>
+
+
+<div class="register-container">
+  <h1>Register</h1>
+
+
+
+  <form action="/account/register" method="POST">
+    <label for="first_name">First name</label>
+    <input type="text" id="first_name" name="account_firstname" required value="<%= locals.account_firstname %>">
+
+    <label for="last_name">Last name</label>
+    <input type="text" id="last_name" name="account_lastname" required value="<%= locals.account_lastname %>">
+
+    <label for="email">Email address</label>
+    <input type="email" id="email" name="account_email" required placeholder="Ender a valid email address" 
+    value="<%= locals.account_email %>">
+
+    <label for="password">Password</label>
+    <div class="password-wrapper">
+      <input 
+        type="password" 
+        id="password" 
+        name="account_password"
+        required
+        minlength="12"
+        pattern="^(?=.*[A-Z])(?=.*\d)(?=.*[^\w\s]).{12,}$"
+        title="Password must be at least 12 characters, contain 1 capital letter, 1 number, and 1 special character"
+      >
+      <span class="toggle-password" onclick="togglePassword()">👁️</span>
+    </div>
+
+    <button type="submit">Register</button>
+  </form>
+</div>
+
+<script>
+  function togglePassword() {
+    const pwd = document.getElementById("password")
+    const icon = document.querySelector(".toggle-password")
+    if (pwd.type === "password") {
+      pwd.type = "text"
+      icon.textContent = "🙈"
+    } else {
+      pwd.type = "password"
+      icon.textContent = "👁️"
+    }
+  }
+</script>
