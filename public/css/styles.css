@@ -284,3 +284,115 @@ footer {
     grid-row: 1/2;
   }
 }
+
+/* Base message styling */
+.message {
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  border-left: 6px solid;
+}
+
+/* Informational notice */
+.notice {
+  background-color: #e8f2ff;
+  color: #084298;
+  border-color: #0d6efd;
+}
+
+/* Success message */
+.success {
+  background-color: #e9f7ef;
+  color: #0f5132;
+  border-color: #198754;
+}
+
+/* Warning message */
+.warning {
+  background-color: #fff4e5;
+  color: #664d03;
+  border-color: #ffc107;
+}
+
+/* Error message */
+.error {
+  background-color: #fdecea;
+  color: #842029;
+  border-color: #dc3545;
+}
+
+/* login and register form styles */
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f6f8;
+}
+
+.login-card {
+  background: #ffffff;
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.login-card h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.login-card form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-card label {
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.login-card input {
+  margin-bottom: 1rem;
+  padding: 0.6rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.login-card input:focus {
+  outline: none;
+  border-color: #0077cc;
+}
+
+.login-card button {
+  padding: 0.7rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #0077cc;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.login-card button:hover {
+  background-color: #005fa3;
+}
+
+.register-link {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.register-link a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
